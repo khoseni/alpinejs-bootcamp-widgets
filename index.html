@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootcamp Functions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Bootcamp Functions Widgets</h1>
+
+    <div class="widget">
+        <!-- Greet Function -->
+        <h2>Greet Widget</h2>
+        <input type="text" id="neighborName" placeholder="Enter neighbor's name">
+        <select id="language">
+            <option value="en">English</option>
+            <option value="zu">Zulu</option>
+        </select>
+        <button onclick="displayGreeting()" class="message">Greet</button>
+        <p id="greeting" class="output"></p>
+    </div>
+
+    <div class="widget">
+        <!-- Word Game Widget -->
+        <h2>Word Game Widget</h2>
+        <label for="sentenceInput">Enter a sentence:</label>
+        <input type="text" id="sentenceInput" placeholder="Enter your sentence">
+        <button onclick="processSentence()" class="message">Process Sentence</button>
+        <h3>Results:</h3>
+        <p>Word Lengths: <span id="wordLengths" class="output"></span></p>
+        <p>Longest Word: <span id="longestWord" class="output"></span></p>
+        <p>Shortest Word: <span id="shortestWord" class="output"></span></p>
+    </div>
+
+    <div class="widget">
+        <!-- Transport Fee Function -->
+        <h2>Transport Fee Widget</h2>
+        <form>
+            <label><input type="radio" name="shift" value="morning" onclick="showTransportFee('morning')"> Morning</label><br>
+            <label><input type="radio" name="shift" value="afternoon" onclick="showTransportFee('afternoon')"> Afternoon</label><br>
+            <label><input type="radio" name="shift" value="night" onclick="showTransportFee('night')"> Night</label><br>
+        </form>
+        <p id="feeDisplay" class="output"></p>
+    </div>
+
+    <div class="widget">
+        <!-- Calculate Airtime Left Widget -->
+        <h2>Calculate Airtime Left</h2>
+        <form id="airtimeForm">
+            <label for="callMinutes">Number of Calls (in minutes):</label>
+            <input type="number" id="callMinutes" name="callMinutes" min="0" step="1" required>
+            <label for="smsCount">Number of SMS:</label>
+            <input type="number" id="smsCount" name="smsCount" min="0" step="1" required>
+            <label for="dataAmount">Amount of Data (in GB):</label>
+            <input type="number" id="dataAmount" name="dataAmount" min="0" step="0.01" required>
+            <label for="availableAirtime">Available Airtime (R):</label>
+            <input type="number" id="availableAirtime" name="availableAirtime" min="0" step="0.01" required>
+            <button type="submit">Calculate</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <!-- JavaScript scripts -->
+    <script src="greeting.js" defer></script>
+    <script src="transport.js" defer></script>
+    <script src="airtime.js" defer></script>
+    <script src="words.js" defer></script>
+
+</body>
+
+</html>
