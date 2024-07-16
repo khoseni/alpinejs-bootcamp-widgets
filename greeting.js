@@ -1,5 +1,5 @@
 // Greet Function
-function greet(name, language) {
+function greet(fullName, language) {
     const greetings = {
         'en': 'Hello',
         'zu': 'Sawubona',
@@ -7,20 +7,20 @@ function greet(name, language) {
         'swa': 'Salamu',
         'yo': 'Pẹlẹ o'
     };
-    return `${greetings[language] || greetings['en']}, ${name}`;
+    return `${greetings[language] || greetings['en']}, ${fullName}`;
 }
 
 function displayGreeting() {
-    const name = document.getElementById('name').value;
+    const fullName = document.getElementById('name').value;
     const lang = document.getElementById('language').value;
 
-    // Validate input: Only letters
-    const regex = /^[A-Za-z]+$/;
+    // Validate input: Only letters and spaces
+    const regex = /^[A-Za-z\s]+$/;
 
-    if (!regex.test(name)) {
-        document.getElementById('greeting').innerText = "Please enter a valid name with letters only.";
+    if (!regex.test(fullName)) {
+        document.getElementById('greeting').innerText = "Only letters allowed, try agin.";
         return;
     }
 
-    document.getElementById('greeting').innerText = greet(name, lang);
+    document.getElementById('greeting').innerText = greet(fullName, lang);
 }
